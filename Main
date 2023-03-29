@@ -28,6 +28,13 @@ local Window = Library.CreateLib("TheHut", "Ocean")
     MiscSection:NewButton("opppppppppppp silent aim", "s", function()
         loadstring(game:HttpGet('https://pastebin.com/JiTSd1kG'))()
     end)
+    MiscSection:NewToggle("Shift Lock Script", "e", function(state)
+        if state then
+            game:GetService('Players').LocalPlayer.DevEnableMouseLock = true
+        else
+            game:GetService('Players').LocalPlayer.DevEnableMouseLock = false
+        end
+    end)
 
     --Jailbreak
     local Jailbreak = Window:NewTab("Jailbreak")
