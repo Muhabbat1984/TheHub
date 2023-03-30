@@ -160,5 +160,8 @@ if game.PlaceId == 606849621 then
             MainSection:NewButton("tp to Pet Sim X", "brings you to Pet sim x supported game", function()
                 loadstring(game:HttpGet(('https://pastebin.com/raw/k1PQrfkW'),true))()
             end)
+            MainSection:NewButton("aimbot", "aimbot", function()
+                loadstring(game:HttpGet(('https://pastebin.com/raw/71YWvURH'),true))()
+            end)
 
         end
