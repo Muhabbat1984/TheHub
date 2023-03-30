@@ -163,5 +163,20 @@ if game.PlaceId == 606849621 then
             MainSection:NewButton("aimbot", "aimbot", function()
                 loadstring(game:HttpGet(('https://pastebin.com/raw/71YWvURH'),true))()
             end)
-
+        elseif game.PlaceId == 9476339275 then
+            local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+            local Window = Library.CreateLib("Double Hackers", "DarkTheme")
+            local DD = Window:NewTab("Double Down")
+            local DDSection = DD:NewSection("Double Down")
+            DDSection:NewLabel("Made by Krome only no one else")
+                DDSection:NewLabel("Make sure to read the info for what the buttons do")
+            DDSection:NewButton("aimbot", "for sword fighting", function()
+                loadstring(game:HttpGet(('https://pastebin.com/raw/71YWvURH'),true))()
+            end)
+            DDSection:NewButton("Block Drop Auto win", "does block drop for you and wins", function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Sw1ndlerScripts/RobloxScripts/main/Misc%20Scripts/DoubleDown.lua?raw=true"))()
+            end)
+            DDSection:NewButton("Cups easy win", "makes the wrong cups invisible and the ones with diamond visible", function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Sw1ndlerScripts/RobloxScripts/main/Misc%20Scripts/DoubleDown.lua?raw=true"))()
+            end)
         end
