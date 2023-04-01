@@ -76,6 +76,9 @@ if game.PlaceId == 606849621 then
         MainSection:NewButton("tp to Jailbreak", "brings you to jailbreak supported game", function()
             loadstring(game:HttpGet(('https://pastebin.com/raw/tr6qLfbM'),true))()
         end)
+        MainSection:NewButton("anti afk", "ez", function()
+            loadstring(game:HttpGet(('https://pastebin.com/raw/drf4JnxG'),true))()
+        end)
         ---MiscSection
         local Misc = Window:NewTab("Misc")
         local MiscSection = Misc:NewSection("Misc")
@@ -179,5 +182,4 @@ if game.PlaceId == 606849621 then
             MainSection:NewButton("aimbot", "aimbot", function()
                 loadstring(game:HttpGet(('https://pastebin.com/raw/71YWvURH'),true))()
             end)
-        
         end
