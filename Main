@@ -1,7 +1,24 @@
---Jailbreak Script
+-- Replace "Player1", "Player2", etc. with the usernames of the players you want to allow
+local whitelist = {"Feruz51", "Maxim209890", "EEEEEEEEEMEEMEMEM"}
+
+-- Replace "Player3", "Player4", etc. with the usernames of the players you want to blacklist
+local blacklist = {"Player3", "Player4"}
+
+-- Check if the player is on the whitelist or blacklist
+local player = game.Players.LocalPlayer
+if table.find(blacklist, player.Name) then
+    warn("You are not authorized to use this script.")
+    return
+elseif not table.find(whitelist, player.Name) then
+    warn("You are not authorized to use this script.")
+    game.Players.LocalPlayer:Kick("You are not authorized to join this game.")
+    return
+else
+    print("You are authorized to use this script.")
+    --Jailbreak Script
 if game.PlaceId == 606849621 then 
     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    local Window = Library.CreateLib("KromeRome(Jailbreak)", "Ocean")
+    local Window = Library.CreateLib("KromeRome(Jailbreak)", "Serpent")
         --Jailbreak
         local Jailbreak = Window:NewTab("Jailbreak")
         local JailbreakSection = Jailbreak:NewSection("Jailbreak")
@@ -60,14 +77,12 @@ if game.PlaceId == 606849621 then
         --Pet Sim Script
     elseif game.PlaceId == 6284583030 then
         local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    local Window = Library.CreateLib("KromeRome(Pet Sim X)", "DarkTheme")
+    local Window = Library.CreateLib("KromeRome(Pet Sim X)", "Serpent")
         -- MAIN
         local PSX = Window:NewTab("PSX")
         local PSXSection = PSX:NewSection("PSX")
-        PSXSection:NewKeybind("Toggle GUI", "KeybindInfo", Enum.KeyCode.LeftAlt, function()
-            Library:ToggleUI()
-            
-        end)
+        
+        
         
         PSXSection:NewButton("anti afk", "ez", function()
             loadstring(game:HttpGet(('https://pastebin.com/raw/drf4JnxG'),true))()
@@ -105,12 +120,23 @@ if game.PlaceId == 606849621 then
         OtherHubsSection:NewButton("Nuke Vs City Goofy ah", "s", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/NukeVsCity/TheALLHACKLoader/main/NukeLoader"))()
         end)
+        local UI = Window:NewTab("UI")
+        local UIXSection = UI:NewSection("UI")
+        UISection:NewKeybind("Toggle GUI", "KeybindInfo", Enum.KeyCode.LeftAlt, function()
+            Library:ToggleUI()
+        end)
+        for theme, color in pairs(themes) do
+            UISection:NewColorPicker(theme, "Change your "..theme, color, function(color3)
+                Library:ChangeColor(theme, color3)
+            end)
+        end
+        
         
         
         --My Resturaunt
     elseif game.PlaceId == 4490140733 then
         local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-        local Window = Library.CreateLib("KromeRome(My Resturaunt)", "Midnight")
+        local Window = Library.CreateLib("KromeRome(My Resturaunt)", "Serpent")
             -- MAIN
             local Main = Window:NewTab("Main")
             local MainSection = Main:NewSection("Main")
@@ -151,7 +177,210 @@ if game.PlaceId == 606849621 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
         elseif game.PlaceId == 9476339275 then
             local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-            local Window = Library.CreateLib("Double Hackers", "DarkTheme")
+            local Window = Library.CreateLib("Double Hackers", "Serpent")
+            local DD = Window:NewTab("Double Down")
+            local DDSection = DD:NewSection("Double Down")
+            DDSection:NewLabel("Made by Krome only no one else")
+                DDSection:NewLabel("Make sure to read the info for what the buttons do")
+            DDSection:NewButton("aimbot", "for sword fighting", function()
+                loadstring(game:HttpGet(('https://pastebin.com/raw/71YWvURH'),true))()
+            end)
+            DDSection:NewButton("Block Drop Auto win", "does block drop for you and wins", function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Sw1ndlerScripts/RobloxScripts/main/Misc%20Scripts/DoubleDown.lua?raw=true"))()
+            end)
+            DDSection:NewButton("Cups easy win", "makes the wrong cups invisible and the ones with diamond visible", function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Sw1ndlerScripts/RobloxScripts/main/Misc%20Scripts/DoubleDown.lua?raw=true"))()
+            end)
+        else
+            local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+        local Window = Library.CreateLib("KromeRome", "Midnight")
+            -- MAIN
+            local Main = Window:NewTab("Supported Games")
+            local MainSection = Main:NewSection("Supported Games")
+            MainSection:NewLabel("Made By KromeXZ Feruz No one else")
+            MainSection:NewKeybind("Toggle GUI", "KeybindInfo", Enum.KeyCode.LeftAlt, function()
+                Library:ToggleUI()
+            end)
+            MainSection:NewButton("teleport to my resturaunt", "Teleports for the specfic game", function()
+                loadstring(game:HttpGet("https://pastebin.com/raw/qb1x7TFs"))()
+            end)
+            MainSection:NewButton("tp to Jailbreak", "brings you to jailbreak supported game", function()
+                loadstring(game:HttpGet(('https://pastebin.com/raw/tr6qLfbM'),true))()
+            end)
+            MainSection:NewButton("tp to Pet Sim X", "brings you to Pet sim x supported game", function()
+                loadstring(game:HttpGet(('https://pastebin.com/raw/k1PQrfkW'),true))()
+            end)
+            MainSection:NewButton("aimbot", "aimbot", function()
+                loadstring(game:HttpGet(('https://pastebin.com/raw/71YWvURH'),true))()
+            end)
+        end
+
+end
+
+
+--Jailbreak Script
+if game.PlaceId == 606849621 then 
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("KromeRome(Jailbreak)", "Serpent")
+        --Jailbreak
+        local Jailbreak = Window:NewTab("Jailbreak")
+        local JailbreakSection = Jailbreak:NewSection("Jailbreak")
+        JailbreakSection:NewButton("give keycard(virtual)", "synapse only", function()
+            loadstring(game:HttpGet("https://pastebin.com/raw/6XJ5VJam"))()
+        end)
+        JailbreakSection:NewButton("Silent aim", "silent aim", function()
+            loadstring(game:HttpGet(('https://pastebin.com/raw/dyavCVXM'),true))()
+        end)
+        JailbreakSection:NewLabel("Prisoner/Criminal: Always use an alt for autorob it might be detected")
+        JailbreakSection:NewButton("AutoRob", "Automatically robs always use an alt", function()
+            loadstring(game:HttpGet(('https://pastebin.com/raw/dyavCVXM'),true))()
+        end)
+        JailbreakSection:NewLabel("Police: Always use an alt for autoarrest it might be detected")
+        JailbreakSection:NewButton("AutoArrest", "Police auto arrest", function()
+            loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/13c61b19690eeef04abb4005c3689770.lua"))()
+        end)
+        MainSection:NewLabel("If your going to autorob or autoarrest go to misc for save gpu so your pc doesn't crash")
+    -- MAIN
+        local Main = Window:NewTab("Main")
+        local MainSection = Main:NewSection("Main")
+        MainSection:NewKeybind("Toggle GUI", "KeybindInfo", Enum.KeyCode.LeftAlt, function()
+            Library:ToggleUI()
+        end)
+        MainSection:NewButton("teleport to my resturaunt", "Teleports for the specfic game", function()
+            loadstring(game:HttpGet("https://pastebin.com/raw/qb1x7TFs"))()
+        end)
+        MainSection:NewButton("tp to Pet Sim X", "brings you to Pet sim x supported game", function()
+            loadstring(game:HttpGet(('https://pastebin.com/raw/k1PQrfkW'),true))()
+        end)
+        ---MiscSection
+        local Misc = Window:NewTab("Misc")
+        local MiscSection = Misc:NewSection("Misc")
+        
+        MiscSection:NewButton("SaveGpu", "Use when autofarm to stop from overheating a lot", function()
+            loadstring(game:HttpGet(('https://pastebin.com/raw/YkfSyGvL'),true))()
+        end)
+        MiscSection:NewButton("inf yield", "s", function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+        end)
+    
+        
+
+        --OtherHubs
+        local OtherHubs = Window:NewTab("OtherHubs")
+        local OtherHubsSection = OtherHubs:NewSection("OtherHubs")
+        OtherHubsSection:NewButton("Ice Trayv3", "synapse only", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/piglex9/icetray3/main/latest.lua"))()
+        end)
+        OtherHubsSection:NewButton("Nuke Vs City Goofy ah", "s", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/NukeVsCity/TheALLHACKLoader/main/NukeLoader"))()
+        end)
+        OtherHubsSection:NewButton("MilkUp(PetSimx)", "s", function()
+            loadstring(game:HttpGet("https://milkup.info/script/PetSimulatorX/"))()
+        end)
+        --Pet Sim Script
+    elseif game.PlaceId == 6284583030 then
+        local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("KromeRome(Pet Sim X)", "Serpent")
+        -- MAIN
+        local PSX = Window:NewTab("PSX")
+        local PSXSection = PSX:NewSection("PSX")
+        
+        
+        
+        PSXSection:NewButton("anti afk", "ez", function()
+            loadstring(game:HttpGet(('https://pastebin.com/raw/drf4JnxG'),true))()
+        end)
+        PSXSection:NewLabel("Use this best autofarming gui and go to farming tab")
+        PSXSection:NewLabel("scroll down to select your area and maximum pets equpped")
+        PSXSection:NewLabel("should be 11-12 for no kick")
+        PSXSection:NewButton("MilkUp(PetSimx)", "s", function()
+            loadstring(game:HttpGet("https://milkup.info/script/PetSimulatorX/"))()
+        end)
+        PSXSection:NewLabel("when using autofarm go to misc for save gpu")
+        ---MiscSection
+        local Misc = Window:NewTab("Misc")
+        local MiscSection = Misc:NewSection("Misc")
+            MiscSection:NewButton("SaveGpu", "Use when autofarm to stop from overheating a lot", function()
+            loadstring(game:HttpGet(('https://pastebin.com/raw/YkfSyGvL'),true))()
+        end)
+        MiscSection:NewButton("Simple Spy", "Use when need help finding remotes and script", function()
+            loadstring(game:HttpGet(('https://pastebin.com/raw/vQV0499g'),true))()
+        end)
+        MiscSection:NewButton("Dex", "Use when need help finding parts in workspace", function()
+            loadstring(game:HttpGet(('https://gist.githubusercontent.com/DinosaurXxX/b757fe011e7e600c0873f967fe427dc2/raw/ee5324771f017073fc30e640323ac2a9b3bfc550/dark%2520dex%2520v4'),true))()
+        end)
+        MiscSection:NewButton("inf yield", "s", function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+        end)
+        MiscSection:NewButton("teleport to my resturaunt", "Teleports for the specfic game", function()
+            loadstring(game:HttpGet("https://pastebin.com/raw/qb1x7TFs"))()
+        end)
+        MiscSection:NewButton("tp to Jailbreak", "brings you to jailbreak supported game", function()
+            loadstring(game:HttpGet(('https://pastebin.com/raw/tr6qLfbM'),true))()
+        end)
+        local OtherHubs = Window:NewTab("OtherHubs")
+        local OtherHubsSection = OtherHubs:NewSection("OtherHubs")
+        OtherHubsSection:NewButton("Nuke Vs City Goofy ah", "s", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/NukeVsCity/TheALLHACKLoader/main/NukeLoader"))()
+        end)
+        local UI = Window:NewTab("UI")
+        local UIXSection = UI:NewSection("UI")
+        UISection:NewKeybind("Toggle GUI", "KeybindInfo", Enum.KeyCode.LeftAlt, function()
+            Library:ToggleUI()
+        end)
+        for theme, color in pairs(themes) do
+            UISection:NewColorPicker(theme, "Change your "..theme, color, function(color3)
+                Library:ChangeColor(theme, color3)
+            end)
+        end
+        
+        
+        
+        --My Resturaunt
+    elseif game.PlaceId == 4490140733 then
+        local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+        local Window = Library.CreateLib("KromeRome(My Resturaunt)", "Serpent")
+            -- MAIN
+            local Main = Window:NewTab("Main")
+            local MainSection = Main:NewSection("Main")
+            MainSection:NewLabel("Made By KromeXZ Feruz No one else")
+            MainSection:NewKeybind("Toggle GUI", "KeybindInfo", Enum.KeyCode.LeftAlt, function()
+                Library:ToggleUI()
+            end)
+            MainSection:NewButton("tp to Jailbreak", "brings you to jailbreak supported game", function()
+                loadstring(game:HttpGet(('https://pastebin.com/raw/tr6qLfbM'),true))()
+            end)
+            MainSection:NewButton("tp to Pet Sim X", "brings you to Pet sim x supported game", function()
+                loadstring(game:HttpGet(('https://pastebin.com/raw/k1PQrfkW'),true))()
+            end)
+                    ---MiscSection
+            local Misc = Window:NewTab("Misc")
+            local MiscSection = Misc:NewSection("Misc")
+                MiscSection:NewButton("SaveGpu", "Use when autofarm to stop from overheating a lot", function()
+                loadstring(game:HttpGet(('https://pastebin.com/raw/YkfSyGvL'),true))()
+            end)
+            MiscSection:NewButton("Simple Spy", "Use when need help finding remotes and script", function()
+                loadstring(game:HttpGet(('https://pastebin.com/raw/vQV0499g'),true))()
+            end)
+            MiscSection:NewButton("Dex", "Use when need help finding parts in workspace", function()
+                loadstring(game:HttpGet(('https://gist.githubusercontent.com/DinosaurXxX/b757fe011e7e600c0873f967fe427dc2/raw/ee5324771f017073fc30e640323ac2a9b3bfc550/dark%2520dex%2520v4'),true))()
+            end)
+            MiscSection:NewButton("inf yield", "s", function()
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+            end)
+            local MyResturaunt = Window:NewTab("My Resturaunt")
+            local MyResturauntSection = MyResturaunt:NewSection("My Resturaunt")
+            MyResturauntSection:NewButton("Nuke Vs City Goofy ah", "s", function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/NukeVsCity/TheALLHACKLoader/main/NukeLoader"))()
+            end)
+            MyResturauntSection:NewButton("Rafa Hub (My Resturaunt)", "s", function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Rafacasari/roblox-scripts/main/mr.lua"))()
+            end)
+        elseif game.PlaceId == 6872265039 then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+        elseif game.PlaceId == 9476339275 then
+            local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+            local Window = Library.CreateLib("Double Hackers", "Serpent")
             local DD = Window:NewTab("Double Down")
             local DDSection = DD:NewSection("Double Down")
             DDSection:NewLabel("Made by Krome only no one else")
