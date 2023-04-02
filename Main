@@ -1,21 +1,16 @@
--- Replace "Player1", "Player2", etc. with the usernames of the players you want to allow
 local whitelist = {"Feruz51", "Maxim209890", "EEEEEEEEEMEEMEMEM"}
 
--- Replace "Player3", "Player4", etc. with the usernames of the players you want to blacklist
-local blacklist = {"Player3", "Player4"}
-
--- Check if the player is on the whitelist or blacklist
 local player = game.Players.LocalPlayer
-if table.find(blacklist, player.Name) then
-    warn("You are not authorized to use this script.")
-    return
-elseif not table.find(whitelist, player.Name) then
-    warn("You are not authorized to use this script.")
-    game.Players.LocalPlayer:Kick("You are not authorized to join this game.")
-    return
+if not table.find(whitelist, player.Name) then
+    local kickMessage = "You are not whitelisted. If you want to get whitelisted, join https://discord.gg/rCEaf94cDS"
+    local copiedMessage = "Link copied to clipboard"
+    kickMessage = kickMessage .. "\n" .. copiedMessage
+    game.Players.LocalPlayer:Kick(kickMessage)
+    setclipboard("https://discord.gg/rCEaf94cDS")
 else
-    print("You are authorized to use this script.")
-    --Jailbreak Script
+    -- Put your code here for whitelisted players to run
+    print("Hello, whitelisted player!")
+                --Jailbreak Script
 if game.PlaceId == 606849621 then 
     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
     local Window = Library.CreateLib("KromeRome(Jailbreak)", "Serpent")
@@ -416,4 +411,10 @@ if game.PlaceId == 606849621 then
             MainSection:NewButton("aimbot", "aimbot", function()
                 loadstring(game:HttpGet(('https://pastebin.com/raw/71YWvURH'),true))()
             end)
+            print("You are whitelisted! Your script goes here.")
         end
+
+
+
+
+        
