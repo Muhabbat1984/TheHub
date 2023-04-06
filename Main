@@ -31,7 +31,10 @@ if game.PlaceId == 606849621 then
         JailbreakSection:NewButton("AutoArrest", "Police auto arrest", function()
             loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/13c61b19690eeef04abb4005c3689770.lua"))()
         end)
-        MainSection:NewLabel("If your going to autorob or autoarrest go to misc for save gpu so your pc doesn't crash")
+        JailbreakSection:NewButton("Nuke Vs City", "Just execute", function()
+            loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/13c61b19690eeef04abb4005c3689770.lua"))()
+        end)
+        JailbreakSection:NewLabel("If your going to autorob or autoarrest go to misc for save gpu so your pc doesn't crash")
     -- MAIN
         local Main = Window:NewTab("Main")
         local MainSection = Main:NewSection("Main")
