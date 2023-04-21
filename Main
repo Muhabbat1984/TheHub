@@ -1,4 +1,4 @@
-              --Jailbreak Script
+--Jailbreak Script
 if game.PlaceId == 606849621 then 
     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
     local Window = Library.CreateLib("KromeRome(Jailbreak)", "Serpent")
@@ -199,10 +199,9 @@ if game.PlaceId == 606849621 then
             MainSection:NewButton("aimbot", "aimbot", function()
                 loadstring(game:HttpGet(('https://pastebin.com/raw/71YWvURH'),true))()
             end)
-        end
+        
 
 end
-
 
 --Jailbreak Script
 if game.PlaceId == 606849621 then 
@@ -400,8 +399,3 @@ if game.PlaceId == 606849621 then
             end)
             print("You are whitelisted! Your script goes here.")
         end
-
-
-
-
-        
